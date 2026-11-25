@@ -180,6 +180,11 @@ Push в `main` запускает `.github/workflows/deploy.yml`. После т�
 каталог `site/` загружается как артефакт GitHub Pages и публикуется официальным
 `actions/deploy-pages`; ветка `gh-pages` и `mkdocs gh-deploy` не используются.
 
+Для первой публикации владелец репозитория должен открыть **Settings → Pages** и
+в разделе **Build and deployment → Source** выбрать **GitHub Actions**. Затем
+нужно вручную запустить workflow **Deploy documentation** или внести изменение в
+`main`. В настройках Actions должны быть разрешены официальные GitHub Actions.
+
 Ожидаемый стандартный адрес после включения Pages:
 `https://valerkamade.github.io/umbra-docs/`. Фактическая публикация должна быть
 подтверждена в GitHub. Домен `docs.umbraspace.ru` на этом этапе не подключается.
