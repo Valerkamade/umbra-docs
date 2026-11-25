@@ -91,8 +91,7 @@ docker compose ps
 python -m mkdocs serve
 ```
 
-Откройте адрес, который выведет MkDocs. Из-за заданного `site_url` локальный
-маршрут содержит префикс `/umbra-docs/`.
+Откройте локальный адрес, который выведет MkDocs.
 
 Остановка сервисов:
 
@@ -185,9 +184,13 @@ Push в `main` запускает `.github/workflows/deploy.yml`. После т�
 нужно вручную запустить workflow **Deploy documentation** или внести изменение в
 `main`. В настройках Actions должны быть разрешены официальные GitHub Actions.
 
-Ожидаемый стандартный адрес после включения Pages:
-`https://valerkamade.github.io/umbra-docs/`. Фактическая публикация должна быть
-подтверждена в GitHub. Домен `docs.umbraspace.ru` на этом этапе не подключается.
+Целевой адрес документации: `https://docs.umbraspace.ru/`. Для его подключения
+в **Settings → Pages → Custom domain** укажите `docs.umbraspace.ru`, а у
+DNS-провайдера создайте запись `CNAME` для `docs`, указывающую на
+`valerkamade.github.io` без имени репозитория. После выпуска сертификата включите
+**Enforce HTTPS**. При публикации через GitHub Actions файл `CNAME` в репозитории
+не требуется и GitHub Pages его игнорирует. Фактическую доступность адреса нужно
+подтвердить после настройки GitHub и DNS.
 
 ## Типовые ошибки
 
