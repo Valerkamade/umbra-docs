@@ -1,0 +1,14 @@
+@startuml
+skinparam backgroundColor transparent
+skinparam monochrome true
+
+actor "Автор документации" as Author
+participant "MkDocs" as MkDocs
+participant "Локальный PlantUML" as PlantUML
+
+Author -> MkDocs: Запустить строгую сборку
+MkDocs -> PlantUML: Передать исходник диаграммы
+PlantUML --> MkDocs: Вернуть SVG
+MkDocs --> Author: Сформировать сайт
+
+@enduml

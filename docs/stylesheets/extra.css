@@ -1,0 +1,4 @@
+/* Сохраняет читаемость монохромных PlantUML SVG в тёмной теме. */
+body[data-md-color-scheme="slate"] .puml .diagram {
+  filter: invert(0.88) hue-rotate(180deg);
+}
