@@ -1,0 +1,94 @@
+site_name: UMBRA
+site_description: Документация проекта и кейс системного анализа
+site_author: Valerkamade
+site_url: https://valerkamade.github.io/umbra-docs/
+repo_url: https://github.com/Valerkamade/umbra-docs
+repo_name: Valerkamade/umbra-docs
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: ru
+  palette:
+    - scheme: default
+      primary: green
+      accent: green
+      toggle:
+        icon: material/weather-night
+        name: Тёмная тема
+    - scheme: slate
+      primary: green
+      accent: green
+      toggle:
+        icon: material/weather-sunny
+        name: Светлая тема
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - toc.follow
+
+plugins:
+  - search:
+      lang:
+        - ru
+        - en
+  - plantuml:
+      puml_url: http://127.0.0.1:8080/
+      puml_keyword: puml
+      request_timeout: 60
+      verbose: false
+      theme:
+        enabled: false
+      cache:
+        backend: local
+        local:
+          path: .cache/plantuml
+          join_project_name: false
+      interaction:
+        enabled: false
+
+hooks:
+  - hooks/plantuml_files.py
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - def_list
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: true
+
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+  links:
+    not_found: warn
+    anchors: warn
+    absolute_links: warn
+    unrecognized_links: warn
+
+nav:
+  - Главная: index.md
