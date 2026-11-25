@@ -11,14 +11,14 @@ theme:
   language: ru
   palette:
     - scheme: default
-      primary: purple
-      accent: teal
+      primary: deep purple
+      accent: deep purple
       toggle:
         icon: material/weather-night
         name: Тёмная тема
     - scheme: slate
-      primary: purple
-      accent: teal
+      primary: deep purple
+      accent: deep purple
       toggle:
         icon: material/weather-sunny
         name: Светлая тема
